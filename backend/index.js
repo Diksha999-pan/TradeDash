@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3002;
 const MONGO_URL = process.env.MONGO_URL;
 
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001"],
+  origin: ["http://localhost:3000", "http://localhost:3001", 'https://trade-dash-ekhq-d6s1yc6sl-dikshas-projects-00ba2392.vercel.app/'],
   credentials: true
 }));
 
