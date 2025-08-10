@@ -1,0 +1,150 @@
+/* For the root Modal overlay (provided by MUI or your custom modal): */
+.MuiModal-root, /* For MUI Modal */
+.buy-modal-overlay {
+  display: flex !important;
+  align-items: center;
+  font-family: 'Times New Roman', Times, serif;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: rgba(0,0,0,0.15); /* Optionally, for dim background */
+  z-index: 1300; /* High z-index for modals */
+}
+
+/* The inner modal card/container */
+.buy-modal-container {
+  background-color: #7880b1;
+  border-radius: 10px;
+  padding: 24px 32px;
+  width: 400px;
+  max-width: 98vw;          /* Responsive on small screens */
+  max-height: 85vh;         /* Key setting for vertical scroll */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;         /* Enables vertical scroll as needed */
+  outline: none;
+}
+
+/* Example: if direct styling doesn't apply, wrap your content in a div with
+   className="buy-modal-container" (not style={{...}}), as below! */
+
+.buy-modal-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #222;
+  font-size: 1.5rem;
+}
+
+.buy-modal-container form {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-modal-container .inputs label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+.buy-modal-container .inputs select,
+.buy-modal-container .inputs input[type="number"] {
+  margin-top: 4px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.buy-modal-container .inputs select:focus,
+.buy-modal-container .inputs input[type="number"]:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+.buy-modal-container .set-price-btn {
+  margin-top: 6px;
+  align-self: flex-start;
+  background-color: #1976d2;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-modal-container .set-price-btn:hover {
+  background-color: #1565c0;
+}
+
+.buy-modal-container .margin-required {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.buy-modal-container .button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.buy-modal-container button {
+  flex: 1;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 0;
+  border-radius: 6px;
+  border: none;
+  transition: background-color 0.3s ease;
+  min-width: 100px;
+  user-select: none;
+}
+
+.buy-modal-container button[type="submit"] {
+  background-color: #1976d2;
+  color: white;
+}
+
+.buy-modal-container button[type="submit"]:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+.buy-modal-container button[type="submit"]:disabled {
+  background-color: #90caf9;
+  cursor: default;
+}
+
+.buy-modal-container .cancel-btn {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.buy-modal-container .cancel-btn:hover:not(:disabled) {
+  background-color: #bdbdbd;
+}
+
+.buy-modal-container button:disabled {
+  opacity: 0.7;
+  pointer-events: none;
+  user-select: none;
+}
+.inputs label {
+  display: block;
+  margin-bottom: 1rem; /* or spacing of your choice */
+}
+.inputs select,
+.inputs input {
+  width: 100%;
+  margin-top: 0.25rem;
+}

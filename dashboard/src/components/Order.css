@@ -1,0 +1,146 @@
+.orders-heading-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 18px;
+  margin-bottom: 14px;
+  margin-top: 6px;
+}
+
+.orders-title {
+  font-size: 2.05em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #1a345b;
+  margin: 0;
+  line-height: 1.18;
+  padding-bottom: 4px;
+  position: relative;
+}
+
+.orders-title:after {
+  content: "";
+  display: block;
+  width: 880px;
+  height: 3px;
+  border-radius: 2px;
+  background: #1976d2;
+  margin-top: 7px;
+  margin-left: 2px;
+}
+
+.orders-count {
+  font-size: 0.62em;
+  font-weight: 600;
+  color: #ff6914;
+  margin-left: 6px;
+  letter-spacing: 0.01em;
+}
+
+.order-table th {
+  color: #224b7f;
+  font-weight: 700;
+  padding-bottom: 10px;
+  font-size: 1.12em;
+  background: none;
+  border-bottom: 2.5px solid #e1ebf2;
+  text-align: left;
+  letter-spacing: 0.05em;
+}
+
+.order-table {
+  margin: 24px auto 0;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 28px #92a7e41a, 0 1px 7px #a7dffe16;
+  padding: 32px 32px 22px 28px;
+  max-width: 950px;
+}
+
+.order-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 14px; /* Space between rows */
+  font-size: 1.05em;
+}
+
+.order-table td {
+  background: #f9fbfc;
+  border-radius: 8px;
+  padding: 16px 14px 16px 12px;
+  color: #232b3b;
+  font-size: 1.04em;
+  font-weight: 500;
+}
+
+.order-table tr:hover td {
+  background: #eaf6fc;
+  box-shadow: 0 2px 9px #b3dee92d;
+}
+.order-table th,
+.order-table td {
+  border-right: 1px solid #e0e6f0;
+}
+
+.order-table th:last-child,
+.order-table td:last-child {
+  border-right: none;
+}
+
+.mode-col {
+  position: relative;
+  min-width: 72px;
+}
+
+.mode-badge {
+  display: inline-block;
+  min-width: 54px;
+  padding: 6px 18px;
+  border-radius: 17px;
+  background: #1976d2;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgba(33,150,243,0.09);
+  border: none;
+  margin-right: 7px;
+  user-select: none;
+}
+
+.mode-badge.sell {
+  background: #e53935;
+}
+
+.executed {
+  background: #eaffec;
+  color: #159d51;
+  border-radius: 14px;
+  padding: 5px 18px;
+  display: inline-block;
+  min-width: 72px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.pending {
+  background: #fffbe7;
+  color: #c7760e;
+  border-radius: 14px;
+  padding: 4px 15px;
+  display: inline-block;
+  min-width: 72px;
+  text-align: center;
+  font-weight: 600;
+}
+
+@media (max-width: 950px) {
+  .order-table {
+    padding: 12px 3px 12px 8px;
+    max-width: 99vw;
+  }
+  .order-table table {
+    font-size: 0.97em;
+  }
+}
