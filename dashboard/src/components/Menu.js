@@ -10,7 +10,7 @@ const [profile, setProfile] = useState({ username: ""});
  
   useEffect(() => {
     const token = localStorage.getItem("token");
-    axios.get("http://localhost:3002/funds", {
+    axios.get("http://https://tradedash-ahr9.onrender.com/funds", {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(res => {

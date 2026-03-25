@@ -12,7 +12,7 @@ const Login = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await axios.post("http://localhost:3002/login", form);
+    const res = await axios.post("http://https://tradedash-ahr9.onrender.com/login", form);
 
     if (res.data.success && res.data.user?.username) {
       // ✅ Save token and username

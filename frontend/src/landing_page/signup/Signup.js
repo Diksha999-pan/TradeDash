@@ -22,7 +22,7 @@ const Signup = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3002/signup",
+        "http://https://tradedash-ahr9.onrender.com/signup",
         {
           ...form,
           createdAt: new Date(),

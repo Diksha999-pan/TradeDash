@@ -15,10 +15,10 @@ const Summary = () => {
   const fetchSummaryData = async () => {
     try {
       const [fundRes, holdingsRes] = await Promise.all([
-        axios.get("http://localhost:3002/funds", {
+        axios.get("http://https://tradedash-ahr9.onrender.com/funds", {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get("http://localhost:3002/allHoldings", {
+        axios.get("http://https://tradedash-ahr9.onrender.com/allHoldings", {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);

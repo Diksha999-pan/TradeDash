@@ -18,7 +18,7 @@ const Positions = () => {
     setError(null);
 
     try {
-      const res = await axios.get("http://localhost:3002/positions", {
+      const res = await axios.get("http://https://tradedash-ahr9.onrender.com/positions", {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log("Positions fetched:", res.data);
