@@ -11,7 +11,7 @@ const Funds = () => {
   useEffect(() => {
   const fetchFunds = async () => {
     try {
-      const res = await axios.get("http://https://tradedash-ahr9.onrender.com/funds", {
+      const res = await axios.get("https://tradedash-ahr9.onrender.com/funds", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -31,7 +31,7 @@ fetchFunds();
     setLoading(true);
     try {
       await axios.post(
-        "http://https://tradedash-ahr9.onrender.com/funds/add",
+        "https://tradedash-ahr9.onrender.com/funds/add",
         { amount: Number(amount) },
         {
           headers: {
@@ -41,7 +41,7 @@ fetchFunds();
       );
       setAmount("");
 // Re-fetch after update
-      const res = await axios.get("http://https://tradedash-ahr9.onrender.com/funds", {
+      const res = await axios.get("https://tradedash-ahr9.onrender.com/funds", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +59,7 @@ fetchFunds();
     setLoading(true);
     try {
       await axios.post(
-        "http://https://tradedash-ahr9.onrender.com/funds/withdraw",
+        "https://tradedash-ahr9.onrender.com/funds/withdraw",
         { amount: Number(amount) },
         {
           headers: {
@@ -69,7 +69,7 @@ fetchFunds();
       );
       setAmount("");
 // Re-fetch after update
-      const res = await axios.get("http://https://tradedash-ahr9.onrender.com/funds", {
+      const res = await axios.get("https://tradedash-ahr9.onrender.com/funds", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

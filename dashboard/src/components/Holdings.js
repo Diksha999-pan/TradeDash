@@ -17,7 +17,7 @@ const Holdings = () => {
       return;
     }
 
-    axios.get("http://https://tradedash-ahr9.onrender.com/allHoldings", {
+    axios.get("https://tradedash-ahr9.onrender.com/allHoldings", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {

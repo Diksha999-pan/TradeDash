@@ -27,7 +27,7 @@ useEffect(() => {
   const fetchPrice = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get(`http://https://tradedash-ahr9.onrender.com/yahoo/quote?symbol=${uid}`, {
+      const res = await axios.get(`https://tradedash-ahr9.onrender.com/yahoo/quote?symbol=${uid}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       // The yahoo-finance2 quote returns a complex object, extract required price e.g., "regularMarketPrice"
@@ -51,7 +51,7 @@ useEffect(() => {
 const handleSetMarketPrice = async () => {
   const token = localStorage.getItem("token");
   try {
-    const res = await axios.get(`http://https://tradedash-ahr9.onrender.com/quote?symbol=${uid}`, {
+    const res = await axios.get(`https://tradedash-ahr9.onrender.com/quote?symbol=${uid}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const price = res.data?.regularMarketPrice || null;
@@ -108,14 +108,14 @@ const handleSetMarketPrice = async () => {
       };
 
       // Place order API call
-      const orderRes = await axios.post("http://https://tradedash-ahr9.onrender.com/orders/newOrder", orderPayload, {
+      const orderRes = await axios.post("https://tradedash-ahr9.onrender.com/orders/newOrder", orderPayload, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const orderId = orderRes.data.order._id;
 
       // Update funds
       await axios.patch(
-        "http://https://tradedash-ahr9.onrender.com/funds/update-used-amount",
+        "https://tradedash-ahr9.onrender.com/funds/update-used-amount",
         {
           type: "buy",
           amount: stockQuantity * stockPrice,
@@ -127,7 +127,7 @@ const handleSetMarketPrice = async () => {
 
       // Update holdings
       await axios.post(
-        "http://https://tradedash-ahr9.onrender.com/allHoldings/create",
+        "https://tradedash-ahr9.onrender.com/allHoldings/create",
         {
           name: uid,
           qty: stockQuantity,

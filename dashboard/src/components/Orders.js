@@ -8,7 +8,7 @@ const Orders = () => {
   useEffect(() => {
      const token = localStorage.getItem("token");
   axios
-    .get("http://https://tradedash-ahr9.onrender.com/orders", {
+    .get("https://tradedash-ahr9.onrender.com/orders", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

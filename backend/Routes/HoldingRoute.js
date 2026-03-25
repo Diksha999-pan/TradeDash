@@ -56,7 +56,7 @@ router.post("/create", verifyToken, async (req, res) => {
     let prevClose = price;  // fallback price if API call fails
 
     try {
-      const quoteRes = await axios.get(`http://https://tradedash-ahr9.onrender.com/yahoo/quote`, {
+      const quoteRes = await axios.get(`https://tradedash-ahr9.onrender.com/yahoo/quote`, {
         params: { symbol: name },
       });
       if (quoteRes.data) {
@@ -130,7 +130,7 @@ router.post("/update-sell", verifyToken, async (req, res) => {
     let prevClose = price; // fallback
 
     try {
-      const quoteRes = await axios.get(`http://https://tradedash-ahr9.onrender.com/yahoo/quote`, {
+      const quoteRes = await axios.get(`https://tradedash-ahr9.onrender.com/yahoo/quote`, {
         params: { symbol: name },
       });
       if (quoteRes.data) {

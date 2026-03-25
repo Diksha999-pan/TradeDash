@@ -48,7 +48,7 @@ const refreshPositions = async () => {
     const token = localStorage.getItem("token");
     if (!token) return;
     try {
-      const res = await axios.get("http://https://tradedash-ahr9.onrender.com/positions", {
+      const res = await axios.get("https://tradedash-ahr9.onrender.com/positions", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPositions(res.data);
@@ -67,7 +67,7 @@ const refreshPositions = async () => {
         setErrorMsg("");
         const updatedStocks = await Promise.all(
           stocks.map(async (stock) => {
-            const res = await fetch(`http://https://tradedash-ahr9.onrender.com/yahoo/quote?symbol=${stock.symbol}`);
+            const res = await fetch(`https://tradedash-ahr9.onrender.com/yahoo/quote?symbol=${stock.symbol}`);
 
             if (!res.ok) {
               console.error(`Fetch error for ${stock.symbol}: HTTP ${res.status}`);

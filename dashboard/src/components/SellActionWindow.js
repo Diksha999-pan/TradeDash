@@ -23,7 +23,7 @@ const SellActionWindow = ({ uid, open, onClose, onSuccess }) => {
       const token = localStorage.getItem("token");
       try {
         // Fetch latest market price from /quote endpoint
-        const priceRes = await axios.get(`http://https://tradedash-ahr9.onrender.com/yahoo/quote?symbol=${uid}`, {
+        const priceRes = await axios.get(`https://tradedash-ahr9.onrender.com/yahoo/quote?symbol=${uid}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -37,7 +37,7 @@ const SellActionWindow = ({ uid, open, onClose, onSuccess }) => {
         }
 
         // Fetch user's holdings quantity to sell
-        const holdingsRes = await axios.get(`http://https://tradedash-ahr9.onrender.com/allHoldings/quantity/${uid}`, {
+        const holdingsRes = await axios.get(`https://tradedash-ahr9.onrender.com/allHoldings/quantity/${uid}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -116,13 +116,13 @@ setStockQuantity("");
       };
 
       // Place SELL order
-      const orderRes = await axios.post("http://https://tradedash-ahr9.onrender.com/orders/newOrder", orderPayload, {
+      const orderRes = await axios.post("https://tradedash-ahr9.onrender.com/orders/newOrder", orderPayload, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
       // Update funds (add proceeds of sale)
      const fundsRes = await axios.patch(
-        "http://https://tradedash-ahr9.onrender.com/funds/update-used-amount",
+        "https://tradedash-ahr9.onrender.com/funds/update-used-amount",
         {
           type: "sell",
           amount: qty * price,
