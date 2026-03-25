@@ -9,28 +9,28 @@ const Login = () => {
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const res = await axios.post("https://tradedash-ahr9.onrender.com/login", form);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        "https://tradedash-ahr9.onrender.com/login",
+        form,
+      );
 
-    if (res.data.success && res.data.user?.username) {
-      // ✅ Save token and username
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("username", res.data.user.username);
-
-      setMessage("✅ Logged in!");
-      window.location.href = `http://localhost:3001/?token=${res.data.token}&username=${encodeURIComponent(JSON.stringify(res.data.user.username))}`;
-}
- else {
-      setMessage(`❌ ${res.data.message || "Unknown error"}`);
+      if (res.data.success && res.data.user?.username) {
+        // ✅ Save token and username
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("username", res.data.user.username);
+        setMessage("✅ Logged in!");
+        window.location.href = `https://trade-dash-1itd.vercel.app/?token=${res.data.token}&username=${encodeURIComponent(JSON.stringify(res.data.user.username))}`;
+      } else {
+        setMessage(`❌ ${res.data.message || "Unknown error"}`);
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setMessage("❌ Something went wrong during login.");
     }
-    }
-   catch (err) {
-    console.error("Login error:", err);
-    setMessage("❌ Something went wrong during login.");
-  }
-};
+  };
 
   return (
     <div className="login-container">

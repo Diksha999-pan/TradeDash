@@ -36,7 +36,7 @@ const Signup = () => {
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("username", res.data.user?.username || "");
-        window.location.href = "http://localhost:3000/login";
+       window.location.href = "https://trade-dash.vercel.app/login";
       }
     } catch (error) {
       console.error("Signup error:", error);
