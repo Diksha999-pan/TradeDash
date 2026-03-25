@@ -16,13 +16,25 @@ const PORT = process.env.PORT || 3002;
 const MONGO_URL = process.env.MONGO_URL;
 
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001", 'https://trade-dash-ekhq-d6s1yc6sl-dikshas-projects-00ba2392.vercel.app/'],
+  origin: [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "https://trade-dash.vercel.app/",
+    // "https://trade-dash-ekhq-d6s1yc6sl-dikshas-projects-00ba2392.vercel.app"
+  ],
   credentials: true
 }));
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
+
+app.options("*", cors());
 
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 // Routes
 app.use("/", authRoute);
